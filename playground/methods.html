@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <button v-on:click="메서드 이름">click-me</button> -->
+      <button v-on:click="logText">click-me</button>
+      <input type="text" v-on:keyup.enter="logText" />
+      <button>ENTER</button>
+      <!-- v-on:keyup -> key가 입력될대마다 반응 
+      v-on:keyup.enter -> Text 입력후 엔터를 입력시에만 반응 -->
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        methods: {
+          logText: function() {
+            console.log("clicked");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

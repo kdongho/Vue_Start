@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <button v-on:click="addNum">increase</button>
+      <p>{{num}}</p>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          num: 10
+        },
+        //watch? 특정 data, 변수등을 주시하다가 변경이 생기면 action
+        watch: {
+          num: function() {
+            this.logText();
+          }
+        },
+        methods: {
+          addNum: function() {
+            this.num += 1;
+          },
+          logText: function() {
+            console.log("changed");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
